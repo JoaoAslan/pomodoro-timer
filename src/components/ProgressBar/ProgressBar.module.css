@@ -1,0 +1,23 @@
+.progressBarDiv {
+  /* Adicionado para garantir que o SVG fique bem centralizado caso a div cresça */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressSvg {
+  /* A rotação (ex: rotate(-90deg)) agora vem do React, mas podemos suavizar caso mude via estado */
+  transition: transform 0.3s ease;
+}
+
+.progressCircle {
+  /* A mágica da animação fica aqui, o resto (dasharray/dashoffset) vem do React */
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.progressBarChildrenContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

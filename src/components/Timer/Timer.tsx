@@ -1,4 +1,4 @@
-import styles from './TImer.module.css'
+import styles from './Timer.module.css'
 
 type TimerProps = {
     time: string

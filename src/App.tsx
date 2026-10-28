@@ -39,6 +39,7 @@ export function App() {
     setTargetTime(target);
     setTimeLeft(CYCLE_DURATIONS[newCycle] * 60 * 1000);
     setCycleTime(`${CYCLE_DURATIONS[newCycle].toString().padStart(2, '0')}:00`);
+    document.title = `${newCycle.charAt(0).toUpperCase() + newCycle.slice(1)} · ${CYCLE_DURATIONS[newCycle].toString().padStart(2, '0')}:00`
   }, [])
 
   const pauseTimer = () => {
@@ -83,6 +84,8 @@ export function App() {
       const totalSeconds = milliDiff / 1000;
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = Math.floor(totalSeconds % 60);
+
+      document.title = `${cycle.charAt(0).toUpperCase()+cycle.slice(1)} · ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 
       setCycleTime(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
     }, 1000);
